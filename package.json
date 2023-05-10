@@ -5,11 +5,14 @@
   "main": "server.js",
   "scripts": {
     "start:dev": "concurrently \"cd ./server && npm run dev\" \"cd ./client && npm run build\"",
+    "dev" : "concurrently \"cd ./server && npm run dev\" \"cd ./client && npm run serve\"",
+ 
+    
     "start": "cd ./server && npm start",
-    "server": "cd ./server node server.js --ignore client",
+    "server": "cd server && npm run server",
     "client": "cd ./client && npm start",
     "build": "cd ./client && npm run build",
-    "install": "concurrently \"cd ./server && npm i\" \" cd ./ client && npm i\""
+    "install": "cd ./server && npm i && cd ../client && npm i"
     
   },
   "keywords": [],
